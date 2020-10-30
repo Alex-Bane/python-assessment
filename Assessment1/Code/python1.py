@@ -132,8 +132,20 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	
-	return 0
+
+	numbers = list(map(int,arg1))
+	highest = 0
+	last_space = 0
+	for characters in numbers:
+		if numbers[characters] == " ":
+			find_sum = numbers[last_space:characters]
+			addition = sum(find_sum)
+			last_space = characters
+			if addition > highest:
+				highest = addition
+
+			
+	return highest
 
 	# <QUESTION 5>
 
